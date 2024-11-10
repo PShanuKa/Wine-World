@@ -12,11 +12,13 @@ export default {
   			secondary: '#42866E',
   			black: '#111',
   			lightGray: '#B1B1B1',
-  			orange: '#DA813D'
+  			orange: '#DA813D',
+			bgSecondary: '#0B161A'
   		},
   		fontFamily: {
   			mulish: ['Mulish', 'sans-serif'],
-  			newsreader: ['Newsreader', 'serif']
+  			newsreader: ['Newsreader', 'serif'],
+  			arimo: ['Arimo', 'sans-serif'],
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

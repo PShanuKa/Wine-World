@@ -1,11 +1,9 @@
-
 import AllRoutes from "./routes/Routes";
 
 function App() {
   return (
     <>
       <AllRoutes />
-      
     </>
   );
 }

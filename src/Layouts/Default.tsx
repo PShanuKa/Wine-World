@@ -1,13 +1,15 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const Default = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div>
-        <Navbar />
+      <Navbar />
+
+      <div className="">{children}</div>
+      <div className="max-w-[1280px] mx-auto">
+        <Footer />
       </div>
-      <div
-       className="container2">{children}</div>
     </>
   );
 };

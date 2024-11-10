@@ -54,7 +54,7 @@ const navLink: nav[] = [
         title: "Red Wines",
         path: "/red-wines",
       },
-    ]
+    ],
   },
   {
     title: "Gifting",
@@ -108,9 +108,9 @@ const Navbar = () => {
       </div>
 
       {/* Main  */}
-      <div className="h-[129px] flex justify-between  container2 w-full items-center">
+      <div className="h-[90px] md:h-[129px] flex justify-between  container2 w-full items-center">
         <div className="flex gap-[25px] ">
-          <Link to="/" className="flex gap-2 items-center">
+          <Link to="/" className=" gap-2 items-center hidden md:flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -128,8 +128,8 @@ const Navbar = () => {
               />
             </svg>
             <h1 className="text-[15px] font-mulish font-semibold">Favorites</h1>
-          </Link>
-          <Link to="/" className="flex gap-2 items-center">
+          </Link> 
+          <Link to="/" className=" gap-2 items-center hidden md:flex">
             <div className="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,13 +151,47 @@ const Navbar = () => {
             </div>
             <h1 className="text-[15px] font-mulish font-semibold">Cart</h1>
           </Link>
+          <button className="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="18"
+              viewBox="0 0 17 18"
+              fill="none"
+            >
+              <path
+                d="M0.000137329 0H17.0001V2.24553H0.000137329V0ZM0.000137329 7.85935H11.3335V10.1049H0.000137329V7.85935ZM0.000137329 15.7187H17.0001V17.9642H0.000137329V15.7187Z"
+                fill="black"
+              />
+            </svg>
+          </button>
         </div>
 
         <div>
-          <img src={logo} alt="Wine World Logo" />
+          <img src={logo} className="w-[116px] h-[57px] md:w-[164px] md:h-[80px]" alt="Wine World Logo" />
         </div>
 
-        <div className="flex  items-center gap-[25px] ">
+        <div className="relative md:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M1.73745 12V1.71429H0V0H2.60618C2.83658 0 3.05755 0.0903058 3.22046 0.251051C3.38338 0.411797 3.47491 0.629814 3.47491 0.857143V11.1429H14.2801L16.0176 4.28571H5.21236V2.57143H17.1313C17.2633 2.57143 17.3937 2.60114 17.5123 2.65829C17.631 2.71544 17.7349 2.79853 17.8161 2.90125C17.8974 3.00396 17.9538 3.1236 17.9812 3.25107C18.0085 3.37853 18.0061 3.51047 17.974 3.63686L15.8021 12.2083C15.7551 12.3936 15.6466 12.5582 15.4939 12.6757C15.3413 12.7933 15.1531 12.8571 14.9595 12.8571H2.60531C2.37491 12.8571 2.15395 12.7668 1.99103 12.6061C1.82811 12.4453 1.73745 12.2273 1.73745 12ZM3.47491 18C3.01411 18 2.57218 17.8194 2.24634 17.4979C1.92051 17.1764 1.73745 16.7404 1.73745 16.2857C1.73745 15.8311 1.92051 15.395 2.24634 15.0735C2.57218 14.752 3.01411 14.5714 3.47491 14.5714C3.93571 14.5714 4.37764 14.752 4.70347 15.0735C5.02931 15.395 5.21236 15.8311 5.21236 16.2857C5.21236 16.7404 5.02931 17.1764 4.70347 17.4979C4.37764 17.8194 3.93571 18 3.47491 18ZM13.8996 18C13.4388 18 12.9969 17.8194 12.6711 17.4979C12.3452 17.1764 12.1622 16.7404 12.1622 16.2857C12.1622 15.8311 12.3452 15.395 12.6711 15.0735C12.9969 14.752 13.4388 14.5714 13.8996 14.5714C14.3604 14.5714 14.8024 14.752 15.1282 15.0735C15.454 15.395 15.6371 15.8311 15.6371 16.2857C15.6371 16.7404 15.454 17.1764 15.1282 17.4979C14.8024 17.8194 14.3604 18 13.8996 18Z"
+                  fill="black"
+                />
+              </svg>
+              <div className="w-3 h-3 bg-primary rounded-full absolute top-[-25%] right-[-25%]">
+                <p className="text-[8px] font-semibold text-white text-center">
+                  0
+                </p>
+              </div>
+            </div>
+
+        <div className="md:flex hidden items-center gap-[25px] ">
           <button className="h-[38px] w-[133px] bg-orange text-white font-bold text-[15px] rounded-[4px]">
             Contact Us
           </button>
@@ -216,7 +250,7 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
-      <NavigateButtonSection />
+      {/* <NavigateButtonSection /> */}
     </nav>
   );
 };

@@ -40,16 +40,16 @@ const Header = () => {
         {carouselItems.map((item) => (
           <CarouselItem key={item.id}>
             <div className="w-full rounded-lg overflow-hidden relative">
-              <div className="absolute right-0 h-[400px] flex items-center">
-                <div className="pr-32">
-                  <h1 className="text-[40px] font-bold font-newsreader text-right text-white">
+              <div className="absolute right-0 h-[140px] sm:h-[250px] md:h-[400px] flex items-center">
+                <div className="md:pr-32 pr-10">
+                  <h1 className="md:text-[40px] sm:text-[30px] text-[13px] md:font-bold font-newsreader text-right text-white">
                     {item.title}
                   </h1>
-                  <p className="text-[20px] my-8 font-normal text-white text-right">
+                  <p className="md:text-[20px] text-[10px] sm:text-[15px] md:my-8  my-2 font-normal text-white text-right">
                     {item.description}
                   </p>
                   <div className="flex justify-end">
-                    <button className="text-[13px] text-[#000] font-mulish font-bold bg-white h-[38px] w-[133px] rounded-[4px]">
+                    <button className="md:text-[13px] sm:text-[11px] text-[9px] text-[#000] font-mulish md:font-bold bg-white h-[24px] md:h-[38px] w-[95px] md:w-[133px] rounded-[4px]">
                       {item.buttonText}
                     </button>
                   </div>
@@ -57,15 +57,15 @@ const Header = () => {
               </div>
               <img
                 src={item.imageUrl}
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[140px] md:h-[400px] sm:h-[250px] object-cover"
                 alt="Carousel item"
               />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="translate-x-[100px]" />
-      <CarouselNext className="translate-x-[-100px]" />
+      <CarouselPrevious className="translate-x-[100px] hidden md:block" />
+      <CarouselNext className="translate-x-[-100px] hidden md:block" />
     </Carousel>
   );
 };
