@@ -1,16 +1,13 @@
 
-
-
-import AllRoutes from './routes/Routes'
+import AllRoutes from "./routes/Routes";
 
 function App() {
-
-
   return (
     <>
       <AllRoutes />
+      
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -6,7 +6,8 @@ const Default = ({ children }: { children: React.ReactNode }) => {
       <div>
         <Navbar />
       </div>
-      <div>{children}</div>
+      <div
+       className="container2">{children}</div>
     </>
   );
 };

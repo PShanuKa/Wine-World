@@ -1,9 +1,12 @@
-
+import Header from "../Home/Header";
 
 const HomePage = () => {
   return (
-    <div>index</div>
-  )
-}
+    <div className="min-h-screen mt-5 w-full">
+      
+      <Header/>
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;
