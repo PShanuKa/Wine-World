@@ -250,7 +250,7 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
-      {/* <NavigateButtonSection /> */}
+      <NavigateButtonSection />
     </nav>
   );
 };
@@ -259,7 +259,7 @@ export default Navbar;
 
 const NavigateButtonSection = () => {
   return (
-    <div className="container2 flex h-[58px] items-center justify-center">
+    <div className="container2  h-[58px] items-center justify-center hidden md:flex">
       <div className="flex gap-[30px]">
         {navLink.map((item, index) => (
           <>
