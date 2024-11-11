@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Logo from "../assets/logo/white.png";
 import payhere from "../assets/payhere.png";
+import downarror from "../assets/home/downarror.gif";
 
 const data = [
   {
@@ -139,7 +140,7 @@ const data = [
 const Footer = () => {
   return (
     <div className="mt-10 md:mt-20">
-      <div className="grid md:grid-cols-12 gap-10 bg-[#1F2730] p-8 rounded-[8px] mx-5">
+      <div className="grid md:grid-cols-12 gap-10 bg-[#1F2730] p-8 rounded-[8px] mx-5 relative">
         <div className="md:col-span-4 col-span-6 flex justify-center md:justify-start w-full">
           <img src={Logo} className="w-[131px] md:w-[319px]" alt="" />
         </div>
@@ -236,7 +237,30 @@ const Footer = () => {
           </div>
         </div>
 
+
+
+        <div className="absolute top-0 right-0 md:flex hidden">
+          <div>
+            <div className="bg-orange rounded-[8px] p-1 mt-3 mr-8">
+            <img src={downarror} className="w-[22px] h-[22px] rotate-180" alt="" />
+            </div>
+          </div>
+        </div>
+
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="grid grid-cols-2 md:grid-cols-5 py-[40px] p-7 gap-4">
         {data.map((info) => (
           <div className={`${info.link.length > 6 && 'col-span-2 md:col-span-1'} flex flex-col md:items-center`}>
