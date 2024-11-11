@@ -6,6 +6,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
+import Marquee from "react-fast-marquee";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@radix-ui/react-accordion";
+import { useState } from "react";
 
 interface nav {
   title: string;
@@ -23,11 +31,11 @@ const navLink: nav[] = [
     path: "/wines",
     children: [
       {
-        title: "Red Wines",
-        path: "/red-wines",
+        title: "Green Wines",
+        path: "/Red-wines",
       },
       {
-        title: "Red Wines",
+        title: "Blue Wines",
         path: "/red-wines",
       },
       {
@@ -41,7 +49,7 @@ const navLink: nav[] = [
     path: "/spirits",
     children: [
       {
-        title: "Red Wines",
+        title: "Corporate",
         path: "/red-wines",
       },
     ],
@@ -79,13 +87,27 @@ const navLink: nav[] = [
 ];
 
 const Navbar = () => {
+  const [navOpen, setNavOpen] = useState(false);
+
+  const toggleHandler = () => {
+    setNavOpen(!navOpen);
+  }
   return (
     <nav>
-      <div className="w-full h-[34px] bg-black"></div>
+      <div className="w-full h-[34px] bg-black "></div>
 
       <div className="w-full  bg-primary ">
         <div className="text-white font-mulish h-[34px] relative  container2  flex justify-center items-center">
-          <h1 className=" text-white text-center font-mulish text-[12px]">
+          <div className="md:hidden px-4">
+            <Marquee speed={40} className="hidden">
+              <h1 className=" text-white text-center font-mulish text-[12px]">
+                Deliveries within Colombo will be fulfilled within 1 working
+                days, and deliveries outside Colombo will be fulfilled within
+                1-2 working days.
+              </h1>
+            </Marquee>
+          </div>
+          <h1 className="hidden md:block text-white text-center font-mulish text-[12px]">
             Deliveries within Colombo will be fulfilled within 1 working days,
             and deliveries outside Colombo will be fulfilled within 1-2 working
             days.
@@ -111,13 +133,14 @@ const Navbar = () => {
       <div className="h-[90px] md:h-[129px] flex justify-between  container2 w-full items-center">
         <div className="flex gap-[25px] ">
           <Link to="/" className=" gap-2 items-center hidden md:flex">
+          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="15"
               viewBox="0 0 18 15"
               fill="none"
-            >
+              >
               <mask id="path-1-inside-1_84_849" fill="white">
                 <path d="M13.0179 0C11.3585 0 9.90563 0.693913 9 1.86685C8.09437 0.693913 6.64152 0 4.98214 0C3.66125 0.00144779 2.39489 0.512355 1.46088 1.42064C0.52687 2.32892 0.00148881 3.56039 0 4.84489C0 10.3149 8.34027 14.7425 8.69545 14.9254C8.78906 14.9744 8.8937 15 9 15C9.1063 15 9.21094 14.9744 9.30455 14.9254C9.65973 14.7425 18 10.3149 18 4.84489C17.9985 3.56039 17.4731 2.32892 16.5391 1.42064C15.6051 0.512355 14.3387 0.00144779 13.0179 0ZM9 13.6595C7.53268 12.828 1.28571 9.04041 1.28571 4.84489C1.28699 3.89193 1.67684 2.97835 2.36978 2.3045C3.06272 1.63065 4.00218 1.25154 4.98214 1.25029C6.54509 1.25029 7.85732 2.05986 8.40536 3.36017C8.45379 3.47483 8.53618 3.5729 8.64206 3.64191C8.74794 3.71093 8.87253 3.74778 9 3.74778C9.12747 3.74778 9.25206 3.71093 9.35794 3.64191C9.46382 3.5729 9.54621 3.47483 9.59464 3.36017C10.1427 2.05752 11.4549 1.25029 13.0179 1.25029C13.9978 1.25154 14.9373 1.63065 15.6302 2.3045C16.3232 2.97835 16.713 3.89193 16.7143 4.84489C16.7143 9.03416 10.4657 12.8272 9 13.6595Z" />
               </mask>
@@ -127,8 +150,10 @@ const Navbar = () => {
                 mask="url(#path-1-inside-1_84_849)"
               />
             </svg>
+        
+
             <h1 className="text-[15px] font-mulish font-semibold">Favorites</h1>
-          </Link> 
+          </Link>
           <Link to="/" className=" gap-2 items-center hidden md:flex">
             <div className="relative">
               <svg
@@ -151,7 +176,7 @@ const Navbar = () => {
             </div>
             <h1 className="text-[15px] font-mulish font-semibold">Cart</h1>
           </Link>
-          <button className="md:hidden">
+          <button className="md:hidden" onClick={toggleHandler}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -168,28 +193,30 @@ const Navbar = () => {
         </div>
 
         <div>
-          <img src={logo} className="w-[116px] h-[57px] md:w-[164px] md:h-[80px]" alt="Wine World Logo" />
+          <img
+            src={logo}
+            className="w-[116px] h-[57px] md:w-[164px] md:h-[80px]"
+            alt="Wine World Logo"
+          />
         </div>
 
         <div className="relative md:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-              >
-                <path
-                  d="M1.73745 12V1.71429H0V0H2.60618C2.83658 0 3.05755 0.0903058 3.22046 0.251051C3.38338 0.411797 3.47491 0.629814 3.47491 0.857143V11.1429H14.2801L16.0176 4.28571H5.21236V2.57143H17.1313C17.2633 2.57143 17.3937 2.60114 17.5123 2.65829C17.631 2.71544 17.7349 2.79853 17.8161 2.90125C17.8974 3.00396 17.9538 3.1236 17.9812 3.25107C18.0085 3.37853 18.0061 3.51047 17.974 3.63686L15.8021 12.2083C15.7551 12.3936 15.6466 12.5582 15.4939 12.6757C15.3413 12.7933 15.1531 12.8571 14.9595 12.8571H2.60531C2.37491 12.8571 2.15395 12.7668 1.99103 12.6061C1.82811 12.4453 1.73745 12.2273 1.73745 12ZM3.47491 18C3.01411 18 2.57218 17.8194 2.24634 17.4979C1.92051 17.1764 1.73745 16.7404 1.73745 16.2857C1.73745 15.8311 1.92051 15.395 2.24634 15.0735C2.57218 14.752 3.01411 14.5714 3.47491 14.5714C3.93571 14.5714 4.37764 14.752 4.70347 15.0735C5.02931 15.395 5.21236 15.8311 5.21236 16.2857C5.21236 16.7404 5.02931 17.1764 4.70347 17.4979C4.37764 17.8194 3.93571 18 3.47491 18ZM13.8996 18C13.4388 18 12.9969 17.8194 12.6711 17.4979C12.3452 17.1764 12.1622 16.7404 12.1622 16.2857C12.1622 15.8311 12.3452 15.395 12.6711 15.0735C12.9969 14.752 13.4388 14.5714 13.8996 14.5714C14.3604 14.5714 14.8024 14.752 15.1282 15.0735C15.454 15.395 15.6371 15.8311 15.6371 16.2857C15.6371 16.7404 15.454 17.1764 15.1282 17.4979C14.8024 17.8194 14.3604 18 13.8996 18Z"
-                  fill="black"
-                />
-              </svg>
-              <div className="w-3 h-3 bg-primary rounded-full absolute top-[-25%] right-[-25%]">
-                <p className="text-[8px] font-semibold text-white text-center">
-                  0
-                </p>
-              </div>
-            </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <path
+              d="M1.73745 12V1.71429H0V0H2.60618C2.83658 0 3.05755 0.0903058 3.22046 0.251051C3.38338 0.411797 3.47491 0.629814 3.47491 0.857143V11.1429H14.2801L16.0176 4.28571H5.21236V2.57143H17.1313C17.2633 2.57143 17.3937 2.60114 17.5123 2.65829C17.631 2.71544 17.7349 2.79853 17.8161 2.90125C17.8974 3.00396 17.9538 3.1236 17.9812 3.25107C18.0085 3.37853 18.0061 3.51047 17.974 3.63686L15.8021 12.2083C15.7551 12.3936 15.6466 12.5582 15.4939 12.6757C15.3413 12.7933 15.1531 12.8571 14.9595 12.8571H2.60531C2.37491 12.8571 2.15395 12.7668 1.99103 12.6061C1.82811 12.4453 1.73745 12.2273 1.73745 12ZM3.47491 18C3.01411 18 2.57218 17.8194 2.24634 17.4979C1.92051 17.1764 1.73745 16.7404 1.73745 16.2857C1.73745 15.8311 1.92051 15.395 2.24634 15.0735C2.57218 14.752 3.01411 14.5714 3.47491 14.5714C3.93571 14.5714 4.37764 14.752 4.70347 15.0735C5.02931 15.395 5.21236 15.8311 5.21236 16.2857C5.21236 16.7404 5.02931 17.1764 4.70347 17.4979C4.37764 17.8194 3.93571 18 3.47491 18ZM13.8996 18C13.4388 18 12.9969 17.8194 12.6711 17.4979C12.3452 17.1764 12.1622 16.7404 12.1622 16.2857C12.1622 15.8311 12.3452 15.395 12.6711 15.0735C12.9969 14.752 13.4388 14.5714 13.8996 14.5714C14.3604 14.5714 14.8024 14.752 15.1282 15.0735C15.454 15.395 15.6371 15.8311 15.6371 16.2857C15.6371 16.7404 15.454 17.1764 15.1282 17.4979C14.8024 17.8194 14.3604 18 13.8996 18Z"
+              fill="black"
+            />
+          </svg>
+          <div className="w-3 h-3 bg-primary rounded-full absolute top-[-25%] right-[-25%]">
+            <p className="text-[8px] font-semibold text-white text-center">0</p>
+          </div>
+        </div>
 
         <div className="md:flex hidden items-center gap-[25px] ">
           <button className="h-[38px] w-[133px] bg-orange text-white font-bold text-[15px] rounded-[4px]">
@@ -251,6 +278,10 @@ const Navbar = () => {
         </div>
       </div>
       <NavigateButtonSection />
+
+      
+      <MobToggleNav toggleHandler={toggleHandler} navOpen={navOpen}/>
+      
     </nav>
   );
 };
@@ -327,6 +358,114 @@ const NavigateButtonSection = () => {
             )}
           </>
         ))}
+      </div>
+    </div>
+  );
+};
+
+const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:boolean}) => {
+
+  return (
+    <div className={`fixed ${navOpen ? "translate-x-0" : "-translate-x-full"} md:hidden transition-transform ease-linear top-0 left-0 bottom-0 right-0 z-50 bg-white p-5`}>
+      <div className="flex flex-col gap-5">
+        <div className="flex justify-end">
+          <button onClick={toggleHandler}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M13.6899 0.320713C13.5917 0.222272 13.475 0.144172 13.3465 0.090885C13.2181 0.0375978 13.0803 0.010169 12.9413 0.010169C12.8022 0.010169 12.6645 0.0375978 12.536 0.090885C12.4076 0.144172 12.2909 0.222272 12.1926 0.320713L7 5.50274L1.80736 0.310093C1.70905 0.211782 1.59233 0.133796 1.46388 0.0805904C1.33543 0.0273845 1.19776 1.03588e-09 1.05873 0C0.919692 -1.03588e-09 0.78202 0.0273845 0.653569 0.0805904C0.525118 0.133796 0.408405 0.211782 0.310093 0.310093C0.211782 0.408405 0.133796 0.525118 0.0805904 0.653569C0.0273845 0.78202 -1.03588e-09 0.919692 0 1.05873C1.03588e-09 1.19776 0.0273845 1.33543 0.0805904 1.46388C0.133796 1.59233 0.211782 1.70905 0.310093 1.80736L5.50274 7L0.310093 12.1926C0.211782 12.291 0.133796 12.4077 0.0805904 12.5361C0.0273845 12.6646 0 12.8022 0 12.9413C0 13.0803 0.0273845 13.218 0.0805904 13.3464C0.133796 13.4749 0.211782 13.5916 0.310093 13.6899C0.408405 13.7882 0.525118 13.8662 0.653569 13.9194C0.78202 13.9726 0.919692 14 1.05873 14C1.19776 14 1.33543 13.9726 1.46388 13.9194C1.59233 13.8662 1.70905 13.7882 1.80736 13.6899L7 8.49726L12.1926 13.6899C12.291 13.7882 12.4077 13.8662 12.5361 13.9194C12.6646 13.9726 12.8022 14 12.9413 14C13.0803 14 13.218 13.9726 13.3464 13.9194C13.4749 13.8662 13.5916 13.7882 13.6899 13.6899C13.7882 13.5916 13.8662 13.4749 13.9194 13.3464C13.9726 13.218 14 13.0803 14 12.9413C14 12.8022 13.9726 12.6646 13.9194 12.5361C13.8662 12.4077 13.7882 12.291 13.6899 12.1926L8.49726 7L13.6899 1.80736C14.0934 1.40384 14.0934 0.724231 13.6899 0.320713Z"
+                fill="#13382B"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="flex justify-center">
+          <img src={logo} className="h-[84px]" alt="" />
+        </div>
+        <div className="h-[1px] bg-[#B1B1B1] "></div>
+
+        <div className="grid grid-cols-2">
+          {/* First Half of navLink */}
+          <div className="flex flex-col gap-3 ">
+            {navLink
+              .slice(0, Math.ceil(navLink.length / 2))
+              .map((item, index) => (
+                <div key={`left-${index}`}>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value={`item-${index}`}>
+                      <AccordionTrigger>
+                        <div className="flex gap-3 items-center">
+                          <p>{item.title}</p>
+                          <div>
+                            {item?.children?.length && (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="10"
+                                height="5"
+                                viewBox="0 0 10 5"
+                                fill="none"
+                              >
+                                <path d="M0 0L5 5L10 0H0Z" fill="#0B161A" />
+                              </svg>
+                            )}
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      {item?.children?.map((child, childIndex) => (
+                        <AccordionContent key={`left-child-${childIndex}`}>
+                           <Link to={child.path} className="mt-5">
+                        {child.title}
+                        </Link>
+                        </AccordionContent>
+                      ))}
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              ))}
+          </div>
+
+          {/* Second Half of navLink */}
+          <div className="flex flex-col gap-3 ">
+            {navLink.slice(Math.ceil(navLink.length / 2)).map((item, index) => (
+              <div key={`right-${index}`}>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value={`item-${index}`}>
+                    <AccordionTrigger>
+                      <div className="flex gap-3 items-center">
+                        <p>{item.title}</p>
+                        <div>
+                          {item?.children?.length && (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="5"
+                              viewBox="0 0 10 5"
+                              fill="none"
+                            >
+                              <path d="M0 0L5 5L10 0H0Z" fill="#0B161A" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    {item?.children?.map((child, childIndex) => (
+                      <AccordionContent  key={`right-child-${childIndex}`}>
+                        <Link to={child.path} className="mt-5">
+                        {child.title}
+                        </Link>
+                      </AccordionContent>
+                    ))}
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import CategoryCartSection from "./CategoryCartSection";
 import FeaturedProducts from "./FeaturedProducts";
 import Header from "./Header";
 import HighlightSection from "./HighlightSection";
+import LogoSection from "./LogoSection";
 import PeopleAlsoTried from "./PeopleAlsoTried";
 import Review from "./Review";
 
@@ -11,6 +12,9 @@ const HomePage = () => {
     <div className="min-h-screen mt-5 w-full">
       <div className="container2">
         <Header />
+      </div>
+      <div className="container2">
+      <LogoSection/>
       </div>
       <div className="mt-10 container2">
         <CategoryCartSection />
