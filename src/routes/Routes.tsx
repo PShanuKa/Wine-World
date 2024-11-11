@@ -2,7 +2,7 @@
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import { authRoutes,  IRoute, publicRoutes } from ".";
-import Default from "../layouts/Default";
+import Default from "../layout/Default";
 
 
 const AllRoutes = () => {
