@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Header = () => {
   const carouselItems = [
@@ -66,7 +67,16 @@ const Header = () => {
   ];
 
   return (
-    <Carousel>
+    <Carousel
+    opts={{
+      align: "start",
+      loop: true,
+    }}
+    plugins={[
+      Autoplay({
+        delay: 4000,
+      }),
+    ]}>
       <CarouselContent>
         {carouselItems.map((item) => (
           <CarouselItem key={item.id}>
