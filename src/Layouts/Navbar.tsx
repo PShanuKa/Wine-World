@@ -21,6 +21,159 @@ interface nav {
   children?: nav[];
 }
 
+const navLink2 = [
+  {
+    title: "Profile",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="19"
+        viewBox="0 0 18 19"
+        fill="none"
+      >
+        <path
+          d="M9 0C8.01109 0 7.04439 0.293245 6.22215 0.842652C5.3999 1.39206 4.75904 2.17295 4.3806 3.08658C4.00216 4.00021 3.90315 5.00555 4.09607 5.97545C4.289 6.94536 4.7652 7.83627 5.46447 8.53553C6.16373 9.2348 7.05464 9.711 8.02455 9.90393C8.99445 10.0969 9.99979 9.99784 10.9134 9.6194C11.827 9.24096 12.6079 8.6001 13.1573 7.77785C13.7068 6.95561 14 5.98891 14 5C14 3.67392 13.4732 2.40215 12.5355 1.46447C11.5979 0.526784 10.3261 0 9 0ZM9 8C8.40666 8 7.82664 7.82405 7.33329 7.49441C6.83994 7.16476 6.45542 6.69623 6.22836 6.14805C6.0013 5.59987 5.94189 4.99667 6.05764 4.41473C6.1734 3.83279 6.45912 3.29824 6.87868 2.87868C7.29824 2.45912 7.83279 2.1734 8.41473 2.05764C8.99667 1.94189 9.59987 2.0013 10.1481 2.22836C10.6962 2.45542 11.1648 2.83994 11.4944 3.33329C11.8241 3.82664 12 4.40666 12 5C12 5.79565 11.6839 6.55871 11.1213 7.12132C10.5587 7.68393 9.79565 8 9 8ZM18 19V18C18 16.1435 17.2625 14.363 15.9497 13.0503C14.637 11.7375 12.8565 11 11 11H7C5.14348 11 3.36301 11.7375 2.05025 13.0503C0.737498 14.363 0 16.1435 0 18V19H2V18C2 16.6739 2.52678 15.4021 3.46447 14.4645C4.40215 13.5268 5.67392 13 7 13H11C12.3261 13 13.5979 13.5268 14.5355 14.4645C15.4732 15.4021 16 16.6739 16 18V19H18Z"
+          fill="#13382B"
+        />
+      </svg>
+    ),
+    path: "/profile",
+  },
+  {
+    title: "Cart",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <path
+          d="M1.5444 10.6667V1.52381H0V0H2.31661C2.52141 0 2.71782 0.0802718 2.86263 0.223157C3.00745 0.366042 3.08881 0.559835 3.08881 0.761905V9.90476H12.6935L14.2379 3.80952H4.63321V2.28571H15.2278C15.3452 2.28572 15.461 2.31212 15.5665 2.36292C15.672 2.41372 15.7644 2.48758 15.8366 2.57889C15.9088 2.67019 15.959 2.77653 15.9833 2.88984C16.0076 3.00314 16.0054 3.12042 15.9769 3.23276L14.0463 10.8518C14.0045 11.0166 13.9081 11.1628 13.7724 11.2673C13.6367 11.3718 13.4695 11.4286 13.2973 11.4286H2.31583C2.11103 11.4286 1.91462 11.3483 1.7698 11.2054C1.62499 11.0625 1.5444 10.8687 1.5444 10.6667ZM3.08881 16C2.67921 16 2.28638 15.8395 1.99675 15.5537C1.70712 15.2679 1.5444 14.8803 1.5444 14.4762C1.5444 14.0721 1.70712 13.6845 1.99675 13.3987C2.28638 13.1129 2.67921 12.9524 3.08881 12.9524C3.49841 12.9524 3.89123 13.1129 4.18087 13.3987C4.4705 13.6845 4.63321 14.0721 4.63321 14.4762C4.63321 14.8803 4.4705 15.2679 4.18087 15.5537C3.89123 15.8395 3.49841 16 3.08881 16ZM12.3552 16C11.9456 16 11.5528 15.8395 11.2632 15.5537C10.9735 15.2679 10.8108 14.8803 10.8108 14.4762C10.8108 14.0721 10.9735 13.6845 11.2632 13.3987C11.5528 13.1129 11.9456 12.9524 12.3552 12.9524C12.7648 12.9524 13.1577 13.1129 13.4473 13.3987C13.7369 13.6845 13.8996 14.0721 13.8996 14.4762C13.8996 14.8803 13.7369 15.2679 13.4473 15.5537C13.1577 15.8395 12.7648 16 12.3552 16Z"
+          fill="#222326"
+        />
+      </svg>
+    ),
+    path: "/profile",
+  },
+  {
+    title: "Favorites",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="13"
+        viewBox="0 0 15 13"
+        fill="none"
+      >
+        <path
+          d="M10.8482 0C9.4654 0 8.25469 0.601392 7.5 1.61793C6.74531 0.601392 5.5346 0 4.15179 0C3.05104 0.00125475 1.99574 0.444041 1.2174 1.23122C0.439058 2.01839 0.00124067 3.08567 0 4.19891C0 8.93961 6.95022 12.7769 7.2462 12.9353C7.32422 12.9778 7.41142 13 7.5 13C7.58858 13 7.67578 12.9778 7.75379 12.9353C8.04978 12.7769 15 8.93961 15 4.19891C14.9988 3.08567 14.5609 2.01839 13.7826 1.23122C13.0043 0.444041 11.949 0.00125475 10.8482 0ZM7.5 11.8382C6.27723 11.1176 1.07143 7.83502 1.07143 4.19891C1.07249 3.373 1.39737 2.58123 1.97482 1.99723C2.55227 1.41323 3.33515 1.08466 4.15179 1.08359C5.45424 1.08359 6.54777 1.78521 7.00446 2.91214C7.04483 3.01152 7.11348 3.09651 7.20172 3.15632C7.28995 3.21614 7.39378 3.24808 7.5 3.24808C7.60622 3.24808 7.71005 3.21614 7.79828 3.15632C7.88651 3.09651 7.95517 3.01152 7.99553 2.91214C8.45223 1.78318 9.54576 1.08359 10.8482 1.08359C11.6648 1.08466 12.4477 1.41323 13.0252 1.99723C13.6026 2.58123 13.9275 3.373 13.9286 4.19891C13.9286 7.82961 8.72143 11.1169 7.5 11.8382Z"
+          fill="#222326"
+        />
+      </svg>
+    ),
+    path: "/profile",
+  },
+  {
+    title: "Complaint Management",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <path
+          d="M0 1.75021C0 0.784094 0.784 0 1.75 0H14.25C15.216 0 16 0.784094 16 1.75021V11.2513C16 11.7155 15.8156 12.1607 15.4874 12.4889C15.1592 12.8172 14.7141 13.0016 14.25 13.0016H8.06L5.487 15.5749C5.28305 15.7781 5.02352 15.9163 4.74112 15.9722C4.45872 16.0282 4.16609 15.9992 3.90011 15.889C3.63414 15.7789 3.40673 15.5924 3.24655 15.3532C3.08636 15.114 3.00058 14.8327 3 14.5447V13.0016H1.75C1.28587 13.0016 0.840752 12.8172 0.512563 12.4889C0.184374 12.1607 0 11.7155 0 11.2513L0 1.75021ZM1.75 1.50018C1.6837 1.50018 1.62011 1.52652 1.57322 1.57341C1.52634 1.6203 1.5 1.6839 1.5 1.75021V11.2513C1.5 11.3894 1.612 11.5014 1.75 11.5014H3.75C3.94891 11.5014 4.13968 11.5804 4.28033 11.7211C4.42098 11.8617 4.5 12.0525 4.5 12.2515V14.4417L7.22 11.7214C7.28954 11.6517 7.37215 11.5964 7.4631 11.5586C7.55404 11.5209 7.65153 11.5014 7.75 11.5014H14.25C14.3163 11.5014 14.3799 11.475 14.4268 11.4281C14.4737 11.3813 14.5 11.3177 14.5 11.2513V1.75021C14.5 1.6839 14.4737 1.6203 14.4268 1.57341C14.3799 1.52652 14.3163 1.50018 14.25 1.50018H1.75ZM8.75 3.75045V6.25075C8.75 6.44969 8.67098 6.64047 8.53033 6.78114C8.38968 6.92181 8.19891 7.00084 8 7.00084C7.80109 7.00084 7.61032 6.92181 7.46967 6.78114C7.32902 6.64047 7.25 6.44969 7.25 6.25075V3.75045C7.25 3.55151 7.32902 3.36072 7.46967 3.22006C7.61032 3.07939 7.80109 3.00036 8 3.00036C8.19891 3.00036 8.38968 3.07939 8.53033 3.22006C8.67098 3.36072 8.75 3.55151 8.75 3.75045ZM9 9.00108C9 9.26633 8.89464 9.52071 8.70711 9.70827C8.51957 9.89583 8.26522 10.0012 8 10.0012C7.73478 10.0012 7.48043 9.89583 7.29289 9.70827C7.10536 9.52071 7 9.26633 7 9.00108C7 8.73583 7.10536 8.48145 7.29289 8.29389C7.48043 8.10633 7.73478 8.00096 8 8.00096C8.26522 8.00096 8.51957 8.10633 8.70711 8.29389C8.89464 8.48145 9 8.73583 9 9.00108Z"
+          fill="black"
+        />
+      </svg>
+    ),
+    path: "/profile",
+  },
+  {
+    title: "Order History",
+    icon: (
+      <div className="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 17 17"
+          fill="none"
+        >
+          <path
+            d="M1 8.5C1 12.6421 4.35786 16 8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C5.72425 1 3.30066 2.50792 2.00379 4.74929"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="5"
+          height="10"
+          viewBox="0 0 5 10"
+          fill="none"
+          className="absolute top-0 left-0 mt-[3px] ml-[7px]"
+        >
+          <path
+            d="M1.00042 1L1 5.68906L4 9"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    ),
+    path: "/profile",
+  },
+  {
+    title: "Logout",
+    icon: (
+      <div className="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="19"
+          viewBox="0 0 14 19"
+          fill="none"
+        >
+          <path
+            d="M12.6875 5.25V3.125C12.6875 2.56141 12.4636 2.02091 12.0651 1.6224C11.6666 1.22388 11.1261 1 10.5625 1H3.125C2.56141 1 2.02091 1.22388 1.6224 1.6224C1.22388 2.02091 1 2.56141 1 3.125V15.875C1 16.4386 1.22388 16.9791 1.6224 17.3776C2.02091 17.7761 2.56141 18 3.125 18H10.5625C11.1261 18 11.6666 17.7761 12.0651 17.3776C12.4636 16.9791 12.6875 16.4386 12.6875 15.875V13.75"
+            stroke="#13382B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="9"
+          viewBox="0 0 15 9"
+          fill="none"
+          className="absolute -mt-[13px] ml-[6px]"
+        >
+          <path
+            d="M1.375 4.5H14.125M14.125 4.5L10.9375 1.3125M14.125 4.5L10.9375 7.6875"
+            stroke="#13382B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    ),
+    path: "/profile",
+  },
+];
+
 const navLink: nav[] = [
   {
     title: "Home",
@@ -91,7 +244,7 @@ const Navbar = () => {
 
   const toggleHandler = () => {
     setNavOpen(!navOpen);
-  }
+  };
   return (
     <nav>
       <div className="w-full h-[34px] bg-black "></div>
@@ -133,14 +286,13 @@ const Navbar = () => {
       <div className="h-[90px] md:h-[129px] flex justify-between  container2 w-full items-center">
         <div className="flex gap-[25px] ">
           <Link to="/" className=" gap-2 items-center hidden md:flex">
-          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="15"
               viewBox="0 0 18 15"
               fill="none"
-              >
+            >
               <mask id="path-1-inside-1_84_849" fill="white">
                 <path d="M13.0179 0C11.3585 0 9.90563 0.693913 9 1.86685C8.09437 0.693913 6.64152 0 4.98214 0C3.66125 0.00144779 2.39489 0.512355 1.46088 1.42064C0.52687 2.32892 0.00148881 3.56039 0 4.84489C0 10.3149 8.34027 14.7425 8.69545 14.9254C8.78906 14.9744 8.8937 15 9 15C9.1063 15 9.21094 14.9744 9.30455 14.9254C9.65973 14.7425 18 10.3149 18 4.84489C17.9985 3.56039 17.4731 2.32892 16.5391 1.42064C15.6051 0.512355 14.3387 0.00144779 13.0179 0ZM9 13.6595C7.53268 12.828 1.28571 9.04041 1.28571 4.84489C1.28699 3.89193 1.67684 2.97835 2.36978 2.3045C3.06272 1.63065 4.00218 1.25154 4.98214 1.25029C6.54509 1.25029 7.85732 2.05986 8.40536 3.36017C8.45379 3.47483 8.53618 3.5729 8.64206 3.64191C8.74794 3.71093 8.87253 3.74778 9 3.74778C9.12747 3.74778 9.25206 3.71093 9.35794 3.64191C9.46382 3.5729 9.54621 3.47483 9.59464 3.36017C10.1427 2.05752 11.4549 1.25029 13.0179 1.25029C13.9978 1.25154 14.9373 1.63065 15.6302 2.3045C16.3232 2.97835 16.713 3.89193 16.7143 4.84489C16.7143 9.03416 10.4657 12.8272 9 13.6595Z" />
               </mask>
@@ -150,7 +302,6 @@ const Navbar = () => {
                 mask="url(#path-1-inside-1_84_849)"
               />
             </svg>
-        
 
             <h1 className="text-[15px] font-mulish font-semibold">Favorites</h1>
           </Link>
@@ -279,9 +430,7 @@ const Navbar = () => {
       </div>
       <NavigateButtonSection />
 
-      
-      <MobToggleNav toggleHandler={toggleHandler} navOpen={navOpen}/>
-      
+      <MobToggleNav toggleHandler={toggleHandler} navOpen={navOpen} />
     </nav>
   );
 };
@@ -363,10 +512,19 @@ const NavigateButtonSection = () => {
   );
 };
 
-const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:boolean}) => {
-
+const MobToggleNav = ({
+  toggleHandler,
+  navOpen,
+}: {
+  toggleHandler: () => void;
+  navOpen: boolean;
+}) => {
   return (
-    <div className={`fixed ${navOpen ? "translate-x-0" : "-translate-x-full"} md:hidden transition-transform ease-linear top-0 left-0 bottom-0 right-0 z-50 bg-white p-5`}>
+    <div
+      className={`fixed ${
+        navOpen ? "translate-x-0" : "-translate-x-full"
+      } md:hidden transition-transform ease-linear top-0 left-0 bottom-0 right-0 z-50 bg-white p-5 `}
+    >
       <div className="flex flex-col gap-5">
         <div className="flex justify-end">
           <button onClick={toggleHandler}>
@@ -387,6 +545,7 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
         <div className="flex justify-center">
           <img src={logo} className="h-[84px]" alt="" />
         </div>
+
         <div className="h-[1px] bg-[#B1B1B1] "></div>
 
         <div className="grid grid-cols-2">
@@ -400,7 +559,9 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
                     <AccordionItem value={`item-${index}`}>
                       <AccordionTrigger>
                         <div className="flex gap-3 items-center">
-                          <p>{item.title}</p>
+                          <p className="font-mulish font-bold uppercase text-primary text-[13px]">
+                            {item.title}
+                          </p>
                           <div>
                             {item?.children?.length && (
                               <svg
@@ -418,9 +579,25 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
                       </AccordionTrigger>
                       {item?.children?.map((child, childIndex) => (
                         <AccordionContent key={`left-child-${childIndex}`}>
-                           <Link to={child.path} className="mt-5">
-                        {child.title}
-                        </Link>
+                          <Link to={child.path} className="">
+                            <div className=" w-[120px] flex my-3 items-center justify-between gap-3">
+                              <p className="font-mulish text-[16px] text-[#686868]">
+                                {child.title}
+                              </p>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="6"
+                                height="11"
+                                viewBox="0 0 6 11"
+                                fill="none"
+                              >
+                                <path
+                                  d="M0.5 10.5L5.5 5.5L0.5 0.5L0.5 10.5Z"
+                                  fill="#686868"
+                                />
+                              </svg>
+                            </div>
+                          </Link>
                         </AccordionContent>
                       ))}
                     </AccordionItem>
@@ -437,7 +614,9 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
                   <AccordionItem value={`item-${index}`}>
                     <AccordionTrigger>
                       <div className="flex gap-3 items-center">
-                        <p>{item.title}</p>
+                        <p className="font-mulish font-bold uppercase text-primary text-[13px]">
+                          {item.title}
+                        </p>
                         <div>
                           {item?.children?.length && (
                             <svg
@@ -454,9 +633,9 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
                       </div>
                     </AccordionTrigger>
                     {item?.children?.map((child, childIndex) => (
-                      <AccordionContent  key={`right-child-${childIndex}`}>
+                      <AccordionContent key={`right-child-${childIndex}`}>
                         <Link to={child.path} className="mt-5">
-                        {child.title}
+                          {child.title}
                         </Link>
                       </AccordionContent>
                     ))}
@@ -465,6 +644,22 @@ const MobToggleNav = ({toggleHandler ,navOpen}:{toggleHandler:()=>void,navOpen:b
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="h-[1px] bg-[#E2E2E2] "></div>
+        <div>
+          {navLink2.map((item, index) => (
+            <Link to={item.path} key={index}>
+              <div className="flex mb-4 gap-5  items-center">
+                <div className="w-[20px]">
+                {item.icon}
+                </div>
+                <p className="font-mulish font-bold uppercase text-primary text-[13px]">
+                  {item.title}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

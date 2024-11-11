@@ -80,22 +80,28 @@ const FeaturedProducts = () => {
         <CarouselContent className="-ml-4">
           <CarouselItem className="pl-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 md:mt-16">
-              {cartData.map((cart) => (
-                <Cart data={cart} />
+              {cartData.map((cart ,index) => (
+                <div className={`${index >= 2 && "hidden"} md:block`}>
+                <Cart  data={cart} />
+                </div>
               ))}
             </div>
           </CarouselItem>
           <CarouselItem className="pl-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 md:mt-16">
-              {cartData.map((cart) => (
-                <Cart data={cart} />
+              {cartData.map((cart, index) => (
+                <div className={`${index >= 2 && "hidden"} md:block`}>
+                <Cart  data={cart} />
+                </div>
               ))}
             </div>
           </CarouselItem>
           <CarouselItem className="pl-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-8 md:mt-16">
-              {cartData.map((cart) => (
-                <Cart data={cart} />
+              {cartData.map((cart, index) => (
+                <div className={`${index >= 2 && "hidden"} md:block`}>
+                <Cart  data={cart} />
+                </div>
               ))}
             </div>
           </CarouselItem>
